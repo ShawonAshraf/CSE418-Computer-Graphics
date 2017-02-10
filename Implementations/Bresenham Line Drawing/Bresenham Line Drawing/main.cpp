@@ -30,7 +30,7 @@ struct Point {
     int y;
 };
 
-// global vars
+// global vars for points
 
 Point a, b, c;
 
