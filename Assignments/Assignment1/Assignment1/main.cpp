@@ -44,6 +44,7 @@ void drawPixel(int x, int y)
     glBegin(GL_POINTS);
     glVertex2i(x,y);
     glEnd();
+    glFlush();
 }
 
 
@@ -130,10 +131,7 @@ void mirrorPoints(int octant, int* x1, int* y1, int* x2, int* y2)
 
 void drawLine(PointCoords p, PointCoords q)
 {
-    glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0, 1, 0);
-    
-    // code goes here
     int x1,y1,y2,x2;
     
     x1 = p.x, y1 = p.y, x2 = q.x, y2 = q.y;
@@ -177,7 +175,6 @@ void drawCircle(Circle circle) {
     
     int decisionVar = 1 - circle.radius;
     
-    glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(1, 0, 0);
     
     while(x <= y)

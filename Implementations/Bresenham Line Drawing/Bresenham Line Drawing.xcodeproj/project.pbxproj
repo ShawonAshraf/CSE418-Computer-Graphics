@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03B7A9B21E3E50410009E0F0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03B7A9B11E3E50410009E0F0 /* main.cpp */; };
-		03B7A9BA1E3E50570009E0F0 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B7A9B91E3E50570009E0F0 /* GLUT.framework */; };
-		03B7A9BC1E3E505E0009E0F0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B7A9BB1E3E505E0009E0F0 /* OpenGL.framework */; };
+		03D9EB9D1E4D9F6A00EB7257 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03D9EB9C1E4D9F6A00EB7257 /* main.cpp */; };
+		03D9EBA51E4D9F7400EB7257 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9EBA41E4D9F7400EB7257 /* GLUT.framework */; };
+		03D9EBA71E4D9F7900EB7257 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9EBA61E4D9F7900EB7257 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		03B7A9AC1E3E50410009E0F0 /* CopyFiles */ = {
+		03D9EB971E4D9F6900EB7257 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,57 +25,55 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03B7A9AE1E3E50410009E0F0 /* Assignment1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Assignment1; sourceTree = BUILT_PRODUCTS_DIR; };
-		03B7A9B11E3E50410009E0F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		03B7A9B91E3E50570009E0F0 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		03B7A9BB1E3E505E0009E0F0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		03D9EBA81E4DA11000EB7257 /* sampleData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sampleData.txt; sourceTree = "<group>"; };
+		03D9EB991E4D9F6A00EB7257 /* Bresenham Line Drawing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Bresenham Line Drawing"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03D9EB9C1E4D9F6A00EB7257 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		03D9EBA41E4D9F7400EB7257 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		03D9EBA61E4D9F7900EB7257 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		03B7A9AB1E3E50410009E0F0 /* Frameworks */ = {
+		03D9EB961E4D9F6900EB7257 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B7A9BC1E3E505E0009E0F0 /* OpenGL.framework in Frameworks */,
-				03B7A9BA1E3E50570009E0F0 /* GLUT.framework in Frameworks */,
+				03D9EBA71E4D9F7900EB7257 /* OpenGL.framework in Frameworks */,
+				03D9EBA51E4D9F7400EB7257 /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03B7A9A51E3E50410009E0F0 = {
+		03D9EB901E4D9F6900EB7257 = {
 			isa = PBXGroup;
 			children = (
-				03B7A9B01E3E50410009E0F0 /* Assignment1 */,
-				03B7A9AF1E3E50410009E0F0 /* Products */,
-				03B7A9B81E3E50570009E0F0 /* Frameworks */,
+				03D9EB9B1E4D9F6A00EB7257 /* Bresenham Line Drawing */,
+				03D9EB9A1E4D9F6A00EB7257 /* Products */,
+				03D9EBA31E4D9F7300EB7257 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		03B7A9AF1E3E50410009E0F0 /* Products */ = {
+		03D9EB9A1E4D9F6A00EB7257 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03B7A9AE1E3E50410009E0F0 /* Assignment1 */,
+				03D9EB991E4D9F6A00EB7257 /* Bresenham Line Drawing */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		03B7A9B01E3E50410009E0F0 /* Assignment1 */ = {
+		03D9EB9B1E4D9F6A00EB7257 /* Bresenham Line Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				03B7A9B11E3E50410009E0F0 /* main.cpp */,
-				03D9EBA81E4DA11000EB7257 /* sampleData.txt */,
+				03D9EB9C1E4D9F6A00EB7257 /* main.cpp */,
 			);
-			path = Assignment1;
+			path = "Bresenham Line Drawing";
 			sourceTree = "<group>";
 		};
-		03B7A9B81E3E50570009E0F0 /* Frameworks */ = {
+		03D9EBA31E4D9F7300EB7257 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				03B7A9BB1E3E505E0009E0F0 /* OpenGL.framework */,
-				03B7A9B91E3E50570009E0F0 /* GLUT.framework */,
+				03D9EBA61E4D9F7900EB7257 /* OpenGL.framework */,
+				03D9EBA41E4D9F7400EB7257 /* GLUT.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -83,68 +81,68 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03B7A9AD1E3E50410009E0F0 /* Assignment1 */ = {
+		03D9EB981E4D9F6900EB7257 /* Bresenham Line Drawing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03B7A9B51E3E50410009E0F0 /* Build configuration list for PBXNativeTarget "Assignment1" */;
+			buildConfigurationList = 03D9EBA01E4D9F6A00EB7257 /* Build configuration list for PBXNativeTarget "Bresenham Line Drawing" */;
 			buildPhases = (
-				03B7A9AA1E3E50410009E0F0 /* Sources */,
-				03B7A9AB1E3E50410009E0F0 /* Frameworks */,
-				03B7A9AC1E3E50410009E0F0 /* CopyFiles */,
+				03D9EB951E4D9F6900EB7257 /* Sources */,
+				03D9EB961E4D9F6900EB7257 /* Frameworks */,
+				03D9EB971E4D9F6900EB7257 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Assignment1;
-			productName = Assignment1;
-			productReference = 03B7A9AE1E3E50410009E0F0 /* Assignment1 */;
+			name = "Bresenham Line Drawing";
+			productName = "Bresenham Line Drawing";
+			productReference = 03D9EB991E4D9F6A00EB7257 /* Bresenham Line Drawing */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		03B7A9A61E3E50410009E0F0 /* Project object */ = {
+		03D9EB911E4D9F6900EB7257 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Shawon Ashraf";
 				TargetAttributes = {
-					03B7A9AD1E3E50410009E0F0 = {
+					03D9EB981E4D9F6900EB7257 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 03B7A9A91E3E50410009E0F0 /* Build configuration list for PBXProject "Assignment1" */;
+			buildConfigurationList = 03D9EB941E4D9F6900EB7257 /* Build configuration list for PBXProject "Bresenham Line Drawing" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 03B7A9A51E3E50410009E0F0;
-			productRefGroup = 03B7A9AF1E3E50410009E0F0 /* Products */;
+			mainGroup = 03D9EB901E4D9F6900EB7257;
+			productRefGroup = 03D9EB9A1E4D9F6A00EB7257 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03B7A9AD1E3E50410009E0F0 /* Assignment1 */,
+				03D9EB981E4D9F6900EB7257 /* Bresenham Line Drawing */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		03B7A9AA1E3E50410009E0F0 /* Sources */ = {
+		03D9EB951E4D9F6900EB7257 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B7A9B21E3E50410009E0F0 /* main.cpp in Sources */,
+				03D9EB9D1E4D9F6A00EB7257 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		03B7A9B31E3E50410009E0F0 /* Debug */ = {
+		03D9EB9E1E4D9F6A00EB7257 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -191,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		03B7A9B41E3E50410009E0F0 /* Release */ = {
+		03D9EB9F1E4D9F6A00EB7257 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -231,14 +229,14 @@
 			};
 			name = Release;
 		};
-		03B7A9B61E3E50410009E0F0 /* Debug */ = {
+		03D9EBA11E4D9F6A00EB7257 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		03B7A9B71E3E50410009E0F0 /* Release */ = {
+		03D9EBA21E4D9F6A00EB7257 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -248,25 +246,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03B7A9A91E3E50410009E0F0 /* Build configuration list for PBXProject "Assignment1" */ = {
+		03D9EB941E4D9F6900EB7257 /* Build configuration list for PBXProject "Bresenham Line Drawing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03B7A9B31E3E50410009E0F0 /* Debug */,
-				03B7A9B41E3E50410009E0F0 /* Release */,
+				03D9EB9E1E4D9F6A00EB7257 /* Debug */,
+				03D9EB9F1E4D9F6A00EB7257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03B7A9B51E3E50410009E0F0 /* Build configuration list for PBXNativeTarget "Assignment1" */ = {
+		03D9EBA01E4D9F6A00EB7257 /* Build configuration list for PBXNativeTarget "Bresenham Line Drawing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03B7A9B61E3E50410009E0F0 /* Debug */,
-				03B7A9B71E3E50410009E0F0 /* Release */,
+				03D9EBA11E4D9F6A00EB7257 /* Debug */,
+				03D9EBA21E4D9F6A00EB7257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 03B7A9A61E3E50410009E0F0 /* Project object */;
+	rootObject = 03D9EB911E4D9F6900EB7257 /* Project object */;
 }
