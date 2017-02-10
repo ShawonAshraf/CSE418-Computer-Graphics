@@ -10,6 +10,7 @@
 #include <math.h>
 
 
+
 #define INF 100000
 #define sign(x) ((x > 0)? 1 : ((x < 0)? -1: 0))
 
@@ -129,43 +130,52 @@ void mirrorPoints(int octant, int* x1, int* y1, int* x2, int* y2)
     }
 }
 
-void drawLine(PointCoords p, PointCoords q)
+void drawLine(PointCoords point1, PointCoords point2)
 {
-    glColor3f(0, 1, 0);
-    int x1,y1,y2,x2;
+    glColor3f(0, 1, 1);
     
-    x1 = p.x, y1 = p.y, x2 = q.x, y2 = q.y;
+    int dx = abs(point2.x - point1.x);
+    int dy = abs(point2.y - point1.y);
     
-    
-    int dx = abs(x2 - x1);
-    int dy = abs(y2 - y1);
-    int decisionVar = 2 * dy - dx;
-    
-    int x = x1;
-    int y = y1;
-    
-    int s1 = sign(x2 - x1), s2 = sign(y2 - y1);
-    int s = 0;
-    
-    int i;
-    for(i = 0; i <dx; i++)
+    // if number is positive 1, -1 if negative, 0 if 0
+    auto sign = [](int number)
     {
-        drawPixel(x, y);
+        return (number > 0)? 1 : (number < 0)? 1 : 0;
+    };
+    
+    
+    int stepX = sign(point2.x - point1.x);
+    int stepY = sign(point2.y - point1.y);
+    
+    
+    int swapNo = 0; // since no swap has occurred for now
+    int x = point1.x, y = point1.y;
+    
+    drawPixel(x, y);
+    
+    if(dy > dx)
+    {
+        swap(&dx, &dy);
+        swapNo = 1;
+    }
+    int decisionVar = (dy << 1) - dx;
+    
+    for(int i = 0; i < dx; i++)
+    {
+        //        drawPixel(x, y);
         while(decisionVar >= 0)
         {
             decisionVar -= 2 * dx;
-            if(s) x += s1;
-            else y += s2;
-    
+            if(swapNo) x += stepX;
+            else y += stepY;
         }
-    
+        
         decisionVar += 2 * dy;
-        if(s) y += s2;
-        else x += s1;
+        if(swapNo) y += stepY;
+        else x += stepX;
+        
+        drawPixel(x, y);
     }
-    drawPixel(x2, y2);
-    
-    glFlush();
 }
 
 
