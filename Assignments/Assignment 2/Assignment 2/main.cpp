@@ -24,12 +24,11 @@ struct Point {
 
 std::vector<Point> points;
 int numPoints;
-
+const int ROTATE_ANGLE = 0.0;
 
 /* user function prototypes */
 
 void DrawPolygon(std::vector<Point>& points);
-void Rotate();
 
 /* Program entry point */
 
@@ -56,9 +55,7 @@ int main(int argc, char *argv[])
     glutKeyboardFunc(key);
     glutIdleFunc(idle);
     
-    glClearColor(0,0,0,0);
-    
-//    Init();
+    glClearColor(1,1,1,1);
     
     glutMainLoop();
     
@@ -93,15 +90,20 @@ static void resize(int width, int height)
 
 static void display(void)
 {
-    int i;
-    
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glColor3d(1,1,1);
     
+    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
+    const double a = t * 90.0;
+    
     
     glPushMatrix();
+    
+    glRotated(60, 1, 0, 0);
+    glRotated(a,0,0,1);
     DrawPolygon(points);
     glPopMatrix();
+    
     
     glutSwapBuffers();
 }
