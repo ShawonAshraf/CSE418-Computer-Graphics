@@ -24,6 +24,11 @@ double GetHermiteEndPoint_01(int t);
 
 double GetHermiteEndPoint_02(int t);
 
+double GetSlopeHermite_01(int t);
+
+
+double GetSlopeHermite_02(int t);
+
 /* Global vars */
 
 struct EndPoint {
@@ -126,4 +131,15 @@ double GetHermiteEndPoint_01(int t) {
 double GetHermiteEndPoint_02(int t) {
     double h1 = (-2 * t * t * t + 3 * t * t) * (P4.x + P4.y + P4.z);
     return h1;
+}
+
+
+double GetSlopeHermite_01(int t) {
+    double h3 = (t * t * t -2 * t * t + t) * P1.slope;
+    return h3;
+}
+
+double GetSlopeHermite_02(int t) {
+    double h4 = (t * t * t -t * t) * P4.slope;
+    return h4;
 }
