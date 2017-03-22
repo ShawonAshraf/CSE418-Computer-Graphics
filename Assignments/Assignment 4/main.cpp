@@ -6,8 +6,10 @@
 
 #endif
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <iostream>
+#include <vector>
+
 
 /* system function prototypes */
 void drawPixel(int x, int y);
@@ -34,6 +36,10 @@ double GetSlopeHermite_02(int t);
 void DrawHermite();
 
 /* Global vars */
+
+std::vector<double> x;
+std::vector<double> y;
+std::vector<double> z;
 
 struct EndPoint {
     int x;
@@ -68,7 +74,7 @@ int main(int argc, char *argv[]) {
     glutInitWindowPosition(10, 10);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 
-    glutCreateWindow("GLUT Shapes");
+    glutCreateWindow("Assignment 4");
 
     glutReshapeFunc(resize);
     glutDisplayFunc(display);
@@ -157,35 +163,42 @@ double GetHermiteEndPoint_02(int t) {
 
 
 double GetSlopeHermite_01(int t) {
-    double h3 = (t * t * t -2 * t * t + t);
+    double h3 = (t * t * t - 2 * t * t + t);
     return h3;
 }
 
 double GetSlopeHermite_02(int t) {
-    double h4 = (t * t * t -t * t);
+    double h4 = (t * t * t - t * t);
     return h4;
 }
 
 void DrawHermite() {
-    for(double t = 0; t <= 1000; t += 0.01) {
-        double h0 = GetHermiteEndPoint_01(t);
-        double h1 = GetHermiteEndPoint_02(t);
-        double h3 = GetSlopeHermite_01(t);
-        double h4 = GetSlopeHermite_02(t);
+    int n = 200;
 
-        double x, y, z;
+    glBegin(GL_LINE_STRIP);
+    for (int i = 0; i < n; i++) {
+        for (double t = 0; t <= 1; t += 0.01) {
+            double h0 = GetHermiteEndPoint_01(t);
+            double h1 = GetHermiteEndPoint_02(t);
+            double h3 = GetSlopeHermite_01(t);
+            double h4 = GetSlopeHermite_02(t);
 
-        x = P1.x * h0 + P1.slopeX * h3
-            + P4.slopeX * h4  + P4.x * h1;
+            double x, y, z;
 
-        y = P1.y * h0 + P1.slopeY * h3
-            + P4.y * h1 + P4.slopeY;
+            x += P1.x * h0 + P1.slopeX * h3
+                 + P4.slopeX * h4 + P4.x * h1;
 
-        z = P1.z * h0 + P1.slopeZ * h3
-            + P4.z * h1 + P4.slopeZ;
+            y += P1.y * h0 + P1.slopeY * h3
+                 + P4.y * h1 + P4.slopeY;
 
-        drawPixel3D(x, y, z);
+            z += P1.z * h0 + P1.slopeZ * h3
+                 + P4.z * h1 + P4.slopeZ;
 
-        glFlush();
+            glVertex3d(x, y, z);
+        }
     }
+    glEnd();
+
+
+    glFlush();
 }
