@@ -6,6 +6,9 @@
 
 #endif
 
+#include <stdlib.h>
+#include <stdio.h>
+
 /* system function prototypes */
 void drawPixel(int x, int y);
 
@@ -38,6 +41,7 @@ struct EndPoint {
     int z;
     double slopeX;
     double slopeY;
+    double slopeZ;
 };
 
 EndPoint P1, P4;
@@ -148,6 +152,23 @@ double GetSlopeHermite_02(int t) {
 
 void DrawHermite() {
     for(double t = 0; t <= 1; t += 0.1) {
+        double h0 = GetHermiteEndPoint_01(t);
+        double h1 = GetHermiteEndPoint_02(t);
+        double h3 = GetSlopeHermite_01(t);
+        double h4 = GetSlopeHermite_02(t);
+
+        double x, y, z;
+
+        x = P1.x * h0 + P1.slopeX * h3
+            + P4.slopeX * h4  + P4.x * h1;
+
+        y = P1.y * h0 + P1.slopeY * h3
+            + P4.y * h1 + P4.slopeY;
+
+        z = P1.z * h0 + P1.slopeZ * h3
+            + P4.z * h1 + P4.slopeZ;
+
+        drawPixel3D(x, y, z);
 
     }
 
