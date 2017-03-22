@@ -26,8 +26,9 @@ double GetHermiteEndPoint_02(int t);
 
 double GetSlopeHermite_01(int t);
 
-
 double GetSlopeHermite_02(int t);
+
+void DrawHermite();
 
 /* Global vars */
 
@@ -122,14 +123,14 @@ void drawPixel3D(int x, int y, int z) {
     glEnd();
 }
 
-double GetHermiteEndPoint_01(int t) {
-    double h0 = (2 * t * t * t - 3 * t * t + 1) * (P1.x + P1.y + P1.z);
+double GetHermiteEndPoint_01(int t, int x) {
+    double h0 = (2 * t * t * t - 3 * t * t + 1) * x;
     return h0;
 
 }
 
-double GetHermiteEndPoint_02(int t) {
-    double h1 = (-2 * t * t * t + 3 * t * t) * (P4.x + P4.y + P4.z);
+double GetHermiteEndPoint_02(int t, int x) {
+    double h1 = (-2 * t * t * t + 3 * t * t) * x;
     return h1;
 }
 
@@ -142,4 +143,10 @@ double GetSlopeHermite_01(int t) {
 double GetSlopeHermite_02(int t) {
     double h4 = (t * t * t -t * t) * P4.slope;
     return h4;
+}
+
+void DrawHermite() {
+    for(double t = 0; t <= 1; t += 0.1) {
+
+    }
 }
