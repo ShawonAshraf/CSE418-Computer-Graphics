@@ -36,7 +36,8 @@ struct EndPoint {
     int x;
     int y;
     int z;
-    double slope;
+    double slopeX;
+    double slopeY;
 };
 
 EndPoint P1, P4;
@@ -123,25 +124,25 @@ void drawPixel3D(int x, int y, int z) {
     glEnd();
 }
 
-double GetHermiteEndPoint_01(int t, int x) {
-    double h0 = (2 * t * t * t - 3 * t * t + 1) * x;
+double GetHermiteEndPoint_01(int t) {
+    double h0 = (2 * t * t * t - 3 * t * t + 1);
     return h0;
 
 }
 
-double GetHermiteEndPoint_02(int t, int x) {
-    double h1 = (-2 * t * t * t + 3 * t * t) * x;
+double GetHermiteEndPoint_02(int t) {
+    double h1 = (-2 * t * t * t + 3 * t * t);
     return h1;
 }
 
 
 double GetSlopeHermite_01(int t) {
-    double h3 = (t * t * t -2 * t * t + t) * P1.slope;
+    double h3 = (t * t * t -2 * t * t + t);
     return h3;
 }
 
 double GetSlopeHermite_02(int t) {
-    double h4 = (t * t * t -t * t) * P4.slope;
+    double h4 = (t * t * t -t * t);
     return h4;
 }
 
@@ -149,4 +150,6 @@ void DrawHermite() {
     for(double t = 0; t <= 1; t += 0.1) {
 
     }
+
+    glFlush();
 }
