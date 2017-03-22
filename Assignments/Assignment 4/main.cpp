@@ -21,7 +21,7 @@ static void key(unsigned char key, int x, int y);
 static void idle(void);
 
 /* user function prototypes */
-void drawPixel3D(int x, int y, int z);
+void drawPixel3D(float x, float y, float z);
 
 double GetHermiteEndPoint_01(int t);
 
@@ -137,10 +137,12 @@ static void idle(void) {
 }
 
 /* user function implementations */
-void drawPixel3D(int x, int y, int z) {
+void drawPixel3D(float x, float y, float z) {
     glBegin(GL_POINT);
-    glVertex3i(x, y, z);
+    glVertex3f(x, y, z);
     glEnd();
+
+    glFlush();
 }
 
 double GetHermiteEndPoint_01(int t) {
@@ -186,6 +188,4 @@ void DrawHermite() {
         drawPixel3D(x, y, z);
 
     }
-
-    glFlush();
 }
