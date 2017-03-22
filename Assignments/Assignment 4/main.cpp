@@ -174,7 +174,7 @@ double GetSlopeHermite_02(int t) {
 }
 
 void DrawHermite() {
-    int n = 200;
+    int n = 100;
 
     glBegin(GL_LINE_STRIP);
     for (int i = 0; i < n; i++) {
