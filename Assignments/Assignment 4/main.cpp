@@ -118,7 +118,12 @@ static void display(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glColor3f(0, 1, 0);
 
+    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
+    const double a = t * 90.0;
+
     glPushMatrix();
+    glRotated(60, 1, 0, 0);
+    glRotated(a, 0, 1, 0);
     DrawHermite();
     glPopMatrix();
 
