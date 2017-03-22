@@ -20,6 +20,21 @@ static void idle(void);
 /* user function prototypes */
 void drawPixel3D(int x, int y, int z);
 
+double GetHermiteEndPoint_01(int t);
+
+double GetHermiteEndPoint_02(int t);
+
+/* Global vars */
+
+struct EndPoint {
+    int x;
+    int y;
+    int z;
+    double slope;
+};
+
+EndPoint P1, P4;
+
 /* Program entry point */
 
 int main(int argc, char *argv[]) {
@@ -73,9 +88,6 @@ static void display(void) {
     glColor3d(1, 1, 1);
 
     glPushMatrix();
-    for (i = 0; i < 100; i++) {
-        drawPixel(i, i);
-    }
     glPopMatrix();
     glFlush();
 
@@ -103,4 +115,15 @@ void drawPixel3D(int x, int y, int z) {
     glBegin(GL_POINT);
     glVertex3i(x, y, z);
     glEnd();
+}
+
+double GetHermiteEndPoint_01(int t) {
+    double h0 = (2 * t * t * t - 3 * t * t + 1) * (P1.x + P1.y + P1.z);
+    return h0;
+
+}
+
+double GetHermiteEndPoint_02(int t) {
+    double h1 = (-2 * t * t * t + 3 * t * t) * (P4.x + P4.y + P4.z);
+    return h1;
 }
