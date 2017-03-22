@@ -7,8 +7,6 @@
 #endif
 
 #include <stdio.h>
-#include <iostream>
-#include <vector>
 
 
 /* system function prototypes */
@@ -37,9 +35,6 @@ void DrawHermite();
 
 /* Global vars */
 
-std::vector<double> x;
-std::vector<double> y;
-std::vector<double> z;
 
 struct EndPoint {
     int x;
@@ -70,7 +65,7 @@ int main(int argc, char *argv[]) {
 
 
     glutInit(&argc, argv);
-    glutInitWindowSize(640, 480);
+    glutInitWindowSize(1366, 768);
     glutInitWindowPosition(10, 10);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 
@@ -108,6 +103,7 @@ static void resize(int width, int height) {
     glLoadIdentity();
     //glFrustum(-ar, ar, -1.0, 1.0, 2.0, 100.0);
     glOrtho(-width / 2, width / 2, -height / 2, height / 2, -300, 300);
+//    glOrtho(-width / 2, width / 2, -height / 2, height / 2, -1000, 1000);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
@@ -182,7 +178,7 @@ void DrawHermite() {
 
     glBegin(GL_LINE_STRIP);
     for (int i = 0; i < n; i++) {
-        for (double t = 0; t <= 1; t += 0.01) {
+        for (double t = 0; t <= 10; t += 0.1) {
             double h0 = GetHermiteEndPoint_01(t);
             double h1 = GetHermiteEndPoint_02(t);
             double h3 = GetSlopeHermite_01(t);
