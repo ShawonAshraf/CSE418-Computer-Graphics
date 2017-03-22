@@ -21,7 +21,7 @@ static void key(unsigned char key, int x, int y);
 static void idle(void);
 
 /* user function prototypes */
-void drawPixel3D(float x, float y, float z);
+void drawPixel3D(double x, double y, double z);
 
 double GetHermiteEndPoint_01(int t);
 
@@ -110,7 +110,7 @@ static void display(void) {
     int i;
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3f(1, 1, 1);
+    glColor3f(0, 1, 0);
 
     glPushMatrix();
     DrawHermite();
@@ -136,9 +136,9 @@ static void idle(void) {
 }
 
 /* user function implementations */
-void drawPixel3D(float x, float y, float z) {
+void drawPixel3D(double x, double y, double z) {
     glBegin(GL_POINT);
-    glVertex3f(x, y, z);
+    glVertex3d(x, y, z);
     glEnd();
 
     glFlush();
@@ -167,7 +167,7 @@ double GetSlopeHermite_02(int t) {
 }
 
 void DrawHermite() {
-    for(double t = 0; t <= 1; t += 0.01) {
+    for(double t = 0; t <= 1000; t += 0.01) {
         double h0 = GetHermiteEndPoint_01(t);
         double h1 = GetHermiteEndPoint_02(t);
         double h3 = GetSlopeHermite_01(t);
@@ -184,9 +184,7 @@ void DrawHermite() {
         z = P1.z * h0 + P1.slopeZ * h3
             + P4.z * h1 + P4.slopeZ;
 
-        glBegin(GL_POINT);
-        glVertex3d(x, y, z);
-        glEnd();
+        drawPixel3D(x, y, z);
 
         glFlush();
     }
