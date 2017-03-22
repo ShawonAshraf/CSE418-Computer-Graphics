@@ -49,6 +49,20 @@ EndPoint P1, P4;
 /* Program entry point */
 
 int main(int argc, char *argv[]) {
+
+    printf("Enter X, Y, Z for P1 : ");
+    scanf("%d %d %d", &P1.x, &P1.y, &P1.z);
+
+    printf("Enter X, Y, Z for P4 : ");
+    scanf("%d %d %d", &P4.x, &P4.y, &P4.z);
+
+    printf("Slope Vector for P1 : ");
+    scanf("%lf %lf %lf", &P1.slopeX, &P1.slopeY, &P1.slopeZ);
+
+    printf("Slope Vector for P4 : ");
+    scanf("%lf %lf %lf", &P4.slopeX, &P4.slopeY, &P4.slopeZ);
+
+
     glutInit(&argc, argv);
     glutInitWindowSize(640, 480);
     glutInitWindowPosition(10, 10);
@@ -99,6 +113,7 @@ static void display(void) {
     glColor3d(1, 1, 1);
 
     glPushMatrix();
+    DrawHermite();
     glPopMatrix();
     glFlush();
 
