@@ -110,12 +110,11 @@ static void display(void) {
     int i;
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3d(1, 1, 1);
+    glColor3f(1, 1, 1);
 
     glPushMatrix();
     DrawHermite();
     glPopMatrix();
-    glFlush();
 
     glutSwapBuffers();
 }
@@ -168,7 +167,7 @@ double GetSlopeHermite_02(int t) {
 }
 
 void DrawHermite() {
-    for(double t = 0; t <= 1; t += 0.1) {
+    for(double t = 0; t <= 1; t += 0.01) {
         double h0 = GetHermiteEndPoint_01(t);
         double h1 = GetHermiteEndPoint_02(t);
         double h3 = GetSlopeHermite_01(t);
@@ -185,7 +184,10 @@ void DrawHermite() {
         z = P1.z * h0 + P1.slopeZ * h3
             + P4.z * h1 + P4.slopeZ;
 
-        drawPixel3D(x, y, z);
+        glBegin(GL_POINT);
+        glVertex3d(x, y, z);
+        glEnd();
 
+        glFlush();
     }
 }
