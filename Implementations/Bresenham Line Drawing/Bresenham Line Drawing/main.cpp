@@ -13,6 +13,7 @@
 #endif
 
 #include <cstdlib>
+#include <vector>
 #include <utility>
 
 #define INF 1000000
@@ -90,19 +91,27 @@ static void resize(int width, int height)
 
 static void display(void)
 {
-    int i;
-    
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glColor3d(1,1,1);
     
     
     // point data
-    a.x = 50; a.y = 100;
-    b.x = 0; b.y = -78;
+    a.x = 0; a.y = 0;
+    b.x = 40; b.y = 0;
+
+    c.x = 40, c.y = 20;
+    Point d;
+    
+    d.x = 0, d.y = 20;
+    
+    
     
     
     glPushMatrix();
     drawLine(a, b);
+    drawLine(b, c);
+    drawLine(d, c);
+    drawLine(a, d);
     glPopMatrix();
     
     glutSwapBuffers();
