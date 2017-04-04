@@ -377,7 +377,9 @@ UpgradeLog*.htm
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout
-*.bim_*.settings
+*.bim_*.settingsstd::vector<double> x;
+std::vector<double> y;
+std::vector<double> z;
 
 # Microsoft Fakes
 FakesAssemblies/

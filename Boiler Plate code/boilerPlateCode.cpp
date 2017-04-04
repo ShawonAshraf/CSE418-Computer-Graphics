@@ -4,8 +4,6 @@
 #include <GL/glut.h>
 #endif
 
-#include <stdlib.h>
-
 /* system function prototypes */
 void drawPixel(int x, int y);
 static void resize(int width, int height);
@@ -35,7 +33,7 @@ int main(int argc, char *argv[])
 
     glutMainLoop();
 
-    return EXIT_SUCCESS;
+    return 0;
 }
 
 
