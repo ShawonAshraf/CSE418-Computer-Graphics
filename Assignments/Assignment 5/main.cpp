@@ -26,6 +26,10 @@ static void idle(void);
 
 void drawCube();
 
+float angle = 1.0f;
+
+void handleMouse(int btn, int state, int x, int y);
+
 /* Program entry point */
 
 int main(int argc, char *argv[]) {
@@ -38,6 +42,7 @@ int main(int argc, char *argv[]) {
 
     glutReshapeFunc(resize);
     glutDisplayFunc(display);
+    glutMouseFunc(handleMouse);
     glutKeyboardFunc(key);
     glutIdleFunc(idle);
 
@@ -107,10 +112,18 @@ static void idle(void) {
 
 void drawCube() {
 
+    glEnable(GL_DEPTH_TEST);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
     glMatrixMode(GL_MODELVIEW);
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
     glTranslatef(0.0, 0.0, -10.5);
+
+    glRotatef(angle, 0.0, 0.0, 1.0);
+    glRotatef(angle, 0.0, 1.0, 0.0);
+    glRotatef(angle, 1.0, 0.0, 0.0);
+
 
     glBegin(GL_QUADS);
     glColor3f(0.0f, 1.0f, 0.0f);
@@ -146,4 +159,12 @@ void drawCube() {
     glEnd();
 
     glFlush();
+}
+
+void handleMouse(int btn, int state, int x, int y) {
+    if (state == GLUT_DOWN) {
+        if (btn == GLUT_LEFT_BUTTON) angle += 10;
+        else if (btn == GLUT_RIGHT_BUTTON) angle -= 10;
+        else angle = 0.0f;
+    }
 }
