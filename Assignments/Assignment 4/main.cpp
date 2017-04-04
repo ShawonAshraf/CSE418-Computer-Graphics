@@ -7,7 +7,7 @@
 #endif
 
 #include <stdio.h>
-
+#include <stdlib.h>
 
 /* system function prototypes */
 void drawPixel(int x, int y);
